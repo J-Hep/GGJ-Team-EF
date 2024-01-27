@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4m23u6biwbnf"]
+
+[ext_resource type="Script" path="res://Dumpster.gd" id="1_7bdmg"]
+[ext_resource type="PackedScene" uid="uid://6dnomrhph6vc" path="res://raccoon.tscn" id="2_m5jjg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_od3bw"]
+size = Vector3(2, 1, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cht22"]
+albedo_color = Color(0.0666667, 0.278431, 0.0901961, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ld0jd"]
+material = SubResource("StandardMaterial3D_cht22")
+size = Vector3(2, 1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qy151"]
+size = Vector3(2, 0.5, 0.25)
+
+[node name="Dumpster" type="CharacterBody3D"]
+script = ExtResource("1_7bdmg")
+
+[node name="DumpsterCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_od3bw")
+
+[node name="DumpsterMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_ld0jd")
+
+[node name="HitDetect" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -1.1)
+
+[node name="HitArea" type="CollisionShape3D" parent="HitDetect"]
+shape = SubResource("BoxShape3D_qy151")
+
+[node name="Raccoon" parent="." instance=ExtResource("2_m5jjg")]
+
+[connection signal="body_entered" from="HitDetect" to="." method="_on_hit_detect_body_entered"]
