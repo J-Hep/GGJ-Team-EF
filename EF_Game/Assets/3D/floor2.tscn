@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfwnkecc56sn8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_brvwy"]
+size = Vector3(3.9753, 0.439423, 15.9857)
+
+[sub_resource type="BoxMesh" id="BoxMesh_a61ib"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8b2xu"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3hppd"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00338495, -0.00395203, -8.00953)
+shape = SubResource("BoxShape3D_brvwy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D2"]
+transform = Transform3D(3.8624, 0, 0, 0, 0.42736, 0, 0, 0, 15.9465, 0, 0, 0)
+visibility_range_end = 40.0
+visibility_range_end_margin = 3.0
+visibility_range_fade_mode = 1
+mesh = SubResource("BoxMesh_a61ib")
+
+[node name="Pillar1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.958583, 1.2291, -8.00953)
+shape = SubResource("CylinderShape3D_8b2xu")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Pillar1"]
+visibility_range_end = 40.0
+visibility_range_end_margin = 3.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_3hppd")
+
+[node name="Pillar2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23276, 1.2291, -12.0763)
+shape = SubResource("CylinderShape3D_8b2xu")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Pillar2"]
+visibility_range_end = 40.0
+visibility_range_end_margin = 3.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_3hppd")

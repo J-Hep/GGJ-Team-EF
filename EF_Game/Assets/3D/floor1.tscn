@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccscdncoxk7pd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_37oqp"]
+size = Vector3(4.02771, 0.4375, 16)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fyqiu"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001, 0, -7.99839)
+shape = SubResource("BoxShape3D_37oqp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+transform = Transform3D(4, 0, 0, 0, 0.426332, 0, 0, 0, 16.0072, 0, 0, 0)
+visibility_range_end = 40.0
+visibility_range_end_margin = 3.0
+visibility_range_fade_mode = 1
+mesh = SubResource("BoxMesh_fyqiu")

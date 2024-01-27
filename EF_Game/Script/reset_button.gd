@@ -6,7 +6,7 @@ func _ready():
 	disabled = true
 	modulate.a = 0
 	
-	await get_tree().create_timer(5.0).timeout # test
+	await get_tree().create_timer(35.0).timeout # test
 	disabled = false
 	modulate.a = 255
 	
