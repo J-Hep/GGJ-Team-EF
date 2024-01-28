@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfwnkecc56sn8"]
+[gd_scene load_steps=6 format=3 uid="uid://bfwnkecc56sn8"]
+
+[ext_resource type="PackedScene" uid="uid://wgwxc52h0u75" path="res://collect.tscn" id="1_tmmnx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_brvwy"]
 size = Vector3(3.9753, 0.439423, 15.9857)
@@ -44,3 +46,6 @@ visibility_range_end = 40.0
 visibility_range_end_margin = 3.0
 visibility_range_fade_mode = 1
 mesh = SubResource("CylinderMesh_3hppd")
+
+[node name="Collect" parent="." instance=ExtResource("1_tmmnx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.570088, -7.60886)

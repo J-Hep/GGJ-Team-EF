@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://bfqk0tq2n8axs" path="res://Camera_Scene_3D.tscn" id="1_8xmk0"]
 [ext_resource type="PackedScene" uid="uid://bgxaiwdnhjsoh" path="res://dumpster.tscn" id="2_dcjd8"]
 [ext_resource type="PackedScene" uid="uid://de75c07l04ug8" path="res://Scenes/reset_button.tscn" id="2_nohhp"]
-[ext_resource type="PackedScene" path="res://Assets/3D/floor1.tscn" id="3_i81fr"]
+[ext_resource type="PackedScene" uid="uid://ccscdncoxk7pd" path="res://Assets/3D/floor1.tscn" id="3_i81fr"]
 [ext_resource type="Script" path="res://Script/floorController.gd" id="4_k0tg3"]
-[ext_resource type="PackedScene" path="res://Assets/3D/floor2.tscn" id="5_rgf2j"]
-[ext_resource type="PackedScene" path="res://Assets/3D/floor3.tscn" id="6_kmr5e"]
+[ext_resource type="PackedScene" uid="uid://bfwnkecc56sn8" path="res://Assets/3D/floor2.tscn" id="5_rgf2j"]
+[ext_resource type="PackedScene" uid="uid://d3l052frrgywr" path="res://Assets/3D/floor3.tscn" id="6_kmr5e"]
 [ext_resource type="Texture2D" uid="uid://dv5jnxjkyxs51" path="res://Assets/2D/city.jpg" id="7_4bftj"]
 [ext_resource type="PackedScene" uid="uid://cqmr0piqfca0o" path="res://Shaders/Trash_Particles.tscn" id="9_gy7f3"]
 [ext_resource type="PackedScene" uid="uid://bgat3v2gsoaae" path="res://Scenes/value_handler.tscn" id="10_bw8c6"]
@@ -79,3 +79,4 @@ shadow_reverse_cull_face = true
 
 [node name="Collect" parent="." instance=ExtResource("12_cud7c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.48016)
+visible = false
