@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://jneng3lm5xdc"]
+[gd_scene load_steps=12 format=3 uid="uid://jneng3lm5xdc"]
 
 [ext_resource type="PackedScene" uid="uid://bfqk0tq2n8axs" path="res://Camera_Scene_3D.tscn" id="1_8xmk0"]
+[ext_resource type="PackedScene" uid="uid://c4m23u6biwbnf" path="res://dumpster.tscn" id="2_dcjd8"]
 [ext_resource type="PackedScene" uid="uid://de75c07l04ug8" path="res://Scenes/reset_button.tscn" id="2_nohhp"]
-[ext_resource type="PackedScene" path="res://Assets/3D/floor1.tscn" id="3_i81fr"]
+[ext_resource type="PackedScene" uid="uid://ccscdncoxk7pd" path="res://Assets/3D/floor1.tscn" id="3_i81fr"]
 [ext_resource type="Script" path="res://Script/floorController.gd" id="4_k0tg3"]
-[ext_resource type="PackedScene" path="res://Assets/3D/floor2.tscn" id="5_rgf2j"]
-[ext_resource type="PackedScene" path="res://Assets/3D/floor3.tscn" id="6_kmr5e"]
+[ext_resource type="PackedScene" uid="uid://bfwnkecc56sn8" path="res://Assets/3D/floor2.tscn" id="5_rgf2j"]
+[ext_resource type="PackedScene" uid="uid://d3l052frrgywr" path="res://Assets/3D/floor3.tscn" id="6_kmr5e"]
 [ext_resource type="Texture2D" uid="uid://dv5jnxjkyxs51" path="res://Assets/2D/city.jpg" id="7_4bftj"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_mkj86"]
@@ -27,19 +28,25 @@ fog_density = 0.0
 [node name="Camera3D" parent="." instance=ExtResource("1_8xmk0")]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0.79186, 0.105011)
 
+[node name="Dumpster" parent="." instance=ExtResource("2_dcjd8")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.0921614, 0, -1.33029)
+
 [node name="Control" parent="." instance=ExtResource("2_nohhp")]
 
 [node name="StaticBody3D" parent="." instance=ExtResource("3_i81fr")]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0)
 script = ExtResource("4_k0tg3")
+metadata/Obstacle = false
 
 [node name="StaticBody3D2" parent="." instance=ExtResource("5_rgf2j")]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, -4.13339, -15.426)
 script = ExtResource("4_k0tg3")
+metadata/Obstacle = false
 
 [node name="StaticBody3D3" parent="." instance=ExtResource("6_kmr5e")]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, -8.2727, -30.8741)
 script = ExtResource("4_k0tg3")
+metadata/Obstacle = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.995637, 0, -0.093309, 0.0717201, 0.639694, 0.765276, 0.0596892, -0.76863, 0.636903, 0, 4.2008, 0)

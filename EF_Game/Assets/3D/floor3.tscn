@@ -14,6 +14,7 @@ size = Vector3(3.9753, 0.439423, 15.9857)
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003, 0, -8)
 shape = SubResource("BoxShape3D_yalib")
+metadata/Obstacle = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D2"]
 transform = Transform3D(3.8624, 0, 0, 0, 0.42736, 0, 0, 0, 15.9465, 0, 0, 0)
@@ -25,6 +26,7 @@ skeleton = NodePath("../../CollisionShape3D2")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15512, 0.731016, -5.35398)
 shape = SubResource("BoxShape3D_lja75")
+metadata/Obstacle = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
 visibility_range_end = 40.0
@@ -34,6 +36,7 @@ mesh = SubResource("BoxMesh_v45ur")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04583, 0.731016, -10.2214)
 shape = SubResource("BoxShape3D_lja75")
+metadata/Obstacle = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D3"]
 visibility_range_end = 40.0
@@ -43,6 +46,7 @@ mesh = SubResource("BoxMesh_v45ur")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05861, 0.731016, -7.78272)
 shape = SubResource("BoxShape3D_lja75")
+metadata/Obstacle = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D4"]
 visibility_range_end = 40.0

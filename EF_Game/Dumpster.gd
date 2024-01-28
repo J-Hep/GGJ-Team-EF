@@ -36,6 +36,6 @@ func _on_hit_detect_body_entered(body):
 	if body.get_meta("Obstacle") == true:
 		#If it collides, and the body has the Metadata bool "Obstacle" set to true
 		#To add the metadata to an object, go to the bottom of the obstacle in the inspector window, click Add Metadata, and create a bool named Obstacle and set it to true
-		
+		print("collided, end the game")
 		#PUT END GAME CODE HERE AND REMOVE PASS
 		pass
