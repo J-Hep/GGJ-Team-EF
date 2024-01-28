@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://cw7nqlavc1qbe"]
+
+[ext_resource type="PackedScene" uid="uid://cvxp6g7ag5oap" path="res://Assets/3D/emptydumpter.glb" id="1_dcohy"]
+[ext_resource type="Texture2D" uid="uid://y2frefiycpsn" path="res://Assets/3D/emptydumpter_Substance_graph_basecolor.png" id="2_uem26"]
+[ext_resource type="Material" uid="uid://hi3nmfxt1wyq" path="res://Shaders/outline.tres" id="3_fl7l2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a27wx"]
+next_pass = ExtResource("3_fl7l2")
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("2_uem26")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2qy2n"]
+next_pass = ExtResource("3_fl7l2")
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[node name="emptydumpter" instance=ExtResource("1_dcohy")]
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_a27wx")
+surface_material_override/1 = SubResource("StandardMaterial3D_2qy2n")

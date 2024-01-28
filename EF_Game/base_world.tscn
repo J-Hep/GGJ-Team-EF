@@ -1,13 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://jneng3lm5xdc"]
+[gd_scene load_steps=17 format=3 uid="uid://jneng3lm5xdc"]
 
 [ext_resource type="PackedScene" uid="uid://bfqk0tq2n8axs" path="res://Camera_Scene_3D.tscn" id="1_8xmk0"]
-[ext_resource type="PackedScene" uid="uid://c4m23u6biwbnf" path="res://dumpster.tscn" id="2_dcjd8"]
+[ext_resource type="PackedScene" uid="uid://bgxaiwdnhjsoh" path="res://dumpster.tscn" id="2_dcjd8"]
 [ext_resource type="PackedScene" uid="uid://de75c07l04ug8" path="res://Scenes/reset_button.tscn" id="2_nohhp"]
-[ext_resource type="PackedScene" uid="uid://ccscdncoxk7pd" path="res://Assets/3D/floor1.tscn" id="3_i81fr"]
+[ext_resource type="PackedScene" path="res://Assets/3D/floor1.tscn" id="3_i81fr"]
 [ext_resource type="Script" path="res://Script/floorController.gd" id="4_k0tg3"]
-[ext_resource type="PackedScene" uid="uid://bfwnkecc56sn8" path="res://Assets/3D/floor2.tscn" id="5_rgf2j"]
-[ext_resource type="PackedScene" uid="uid://d3l052frrgywr" path="res://Assets/3D/floor3.tscn" id="6_kmr5e"]
+[ext_resource type="PackedScene" path="res://Assets/3D/floor2.tscn" id="5_rgf2j"]
+[ext_resource type="PackedScene" path="res://Assets/3D/floor3.tscn" id="6_kmr5e"]
 [ext_resource type="Texture2D" uid="uid://dv5jnxjkyxs51" path="res://Assets/2D/city.jpg" id="7_4bftj"]
+[ext_resource type="PackedScene" uid="uid://cqmr0piqfca0o" path="res://Shaders/Trash_Particles.tscn" id="9_gy7f3"]
+[ext_resource type="PackedScene" uid="uid://bgat3v2gsoaae" path="res://Scenes/value_handler.tscn" id="10_bw8c6"]
+[ext_resource type="PackedScene" uid="uid://b7osos58qr1ud" path="res://audio_handler.tscn" id="11_3al3w"]
+[ext_resource type="PackedScene" uid="uid://wgwxc52h0u75" path="res://collect.tscn" id="12_cud7c"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_mkj86"]
 panorama = ExtResource("7_4bftj")
@@ -19,17 +23,27 @@ sky_material = SubResource("PanoramaSkyMaterial_mkj86")
 background_mode = 2
 sky = SubResource("Sky_mpxty")
 ambient_light_color = Color(0.121569, 0.407843, 0.47451, 1)
-fog_light_color = Color(0.517647, 0.552941, 0.607843, 1)
-fog_light_energy = 0.25
-fog_density = 0.0
+glow_enabled = true
+glow_bloom = 0.05
+glow_blend_mode = 1
+fog_enabled = true
+fog_light_color = Color(0.129412, 0.129412, 0.129412, 1)
+fog_density = 0.33
+fog_sky_affect = 0.33
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_da6r1"]
 
 [node name="BaseWorld" type="Node3D"]
 
 [node name="Camera3D" parent="." instance=ExtResource("1_8xmk0")]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0.79186, 0.105011)
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 1.5, 0.105)
+current = true
 
 [node name="Dumpster" parent="." instance=ExtResource("2_dcjd8")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.0921614, 0, -1.33029)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.0921614, 0.146749, -1.33029)
+
+[node name="GPUParticles3D" parent="Dumpster" instance=ExtResource("9_gy7f3")]
+transform = Transform3D(-1.74846e-07, -4, 0, 4, -1.74846e-07, 0, 0, 0, 4, -0.393877, 1.80333, 0.694059)
 
 [node name="Control" parent="." instance=ExtResource("2_nohhp")]
 
@@ -57,3 +71,11 @@ shadow_reverse_cull_face = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fjesa")
+camera_attributes = SubResource("CameraAttributesPractical_da6r1")
+
+[node name="value_handler" parent="." instance=ExtResource("10_bw8c6")]
+
+[node name="audio_handler" parent="." instance=ExtResource("11_3al3w")]
+
+[node name="Collect" parent="." instance=ExtResource("12_cud7c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.48016)

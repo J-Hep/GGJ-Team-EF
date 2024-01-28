@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7vvfyqc2ybs8"]
+[gd_scene load_steps=3 format=3 uid="uid://b7vvfyqc2ybs8"]
 
 [ext_resource type="Script" path="res://Script/Main_Menu.gd" id="1_ihog5"]
+[ext_resource type="Texture2D" uid="uid://xnrsj7o1hg6n" path="res://Assets/2D/TonsOfRaccoons.JPG" id="2_dejad"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -29,6 +30,11 @@ grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="PanelContainer"]
 layout_mode = 2
+
+[node name="TonsOfRaccoons" type="Sprite2D" parent="PanelContainer/Panel"]
+position = Vector2(575, 142.5)
+scale = Vector2(2.33532, 2.33532)
+texture = ExtResource("2_dejad")
 
 [node name="Button" type="Button" parent="PanelContainer/Panel"]
 layout_mode = 1

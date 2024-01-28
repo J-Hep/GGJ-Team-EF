@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7osos58qr1ud"]
+
+[ext_resource type="Script" path="res://audio_handler.gd" id="1_y3v6c"]
+[ext_resource type="AudioStream" uid="uid://d0drhv1rnlivt" path="res://Assets/Audio/garbage can roll edit 2.mp3" id="2_xrtci"]
+[ext_resource type="AudioStream" uid="uid://bbrr6ruxt32wu" path="res://Assets/Audio/Racoon - Sound Effect ｜ ProSounds.mp3" id="3_3g2ud"]
+[ext_resource type="AudioStream" uid="uid://cj212goqchvmy" path="res://Assets/Audio/Sound Effects - Cartoon Wheel Squeaking.mp3" id="4_rxgqb"]
+[ext_resource type="AudioStream" uid="uid://qy6p64ecnglp" path="res://Assets/Audio/Metal pipe falling sound effect but it’s more violent.mp3" id="5_hbly5"]
+
+[node name="audio_handler" type="Node"]
+script = ExtResource("1_y3v6c")
+
+[node name="Rolling" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xrtci")
+pitch_scale = 0.75
+autoplay = true
+
+[node name="Raccoon1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3g2ud")
+autoplay = true
+
+[node name="Squeaky" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_rxgqb")
+volume_db = -25.0
+autoplay = true
+
+[node name="pipe" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_hbly5")

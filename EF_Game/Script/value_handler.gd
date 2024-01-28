@@ -15,6 +15,9 @@ func _ready():
 	gameState = false
 pass # Replace with function body.
 
+func add_coins(amount: int):
+	coins = coins + amount
+
 func set_coins(amount: int):
 	coins = amount
 

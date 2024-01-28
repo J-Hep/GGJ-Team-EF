@@ -38,4 +38,14 @@ func _on_hit_detect_body_entered(body):
 		#To add the metadata to an object, go to the bottom of the obstacle in the inspector window, click Add Metadata, and create a bool named Obstacle and set it to true
 		print("collided, end the game")
 		#PUT END GAME CODE HERE AND REMOVE PASS
-		pass
+		print($"../value_handler".get_coins())
+		print($"../value_handler".get_distance())
+		print($"../value_handler".get_time())
+		
+		$"../value_handler".set_game_state(true)
+		print("Game ended: ",$"../value_handler".get_game_state())
+	
+	if body.has_meta("Collect"):
+		print("+1 Collectable")
+		$"../value_handler".add_coins(1)
+	

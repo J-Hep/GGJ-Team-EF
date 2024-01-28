@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://wgwxc52h0u75"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lvdbf"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_arakg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j2nut"]
+albedo_color = Color(1, 1, 0.396078, 1)
+
+[node name="Collect" type="StaticBody3D"]
+metadata/Collect = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_lvdbf")
+metadata/Collect = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_arakg")
+surface_material_override/0 = SubResource("StandardMaterial3D_j2nut")

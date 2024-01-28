@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://qy6p64ecnglp"
+path="res://.godot/imported/Metal pipe falling sound effect but it’s more violent.mp3-9a06ad438570ee46f85f0e64dffe79ac.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Metal pipe falling sound effect but it’s more violent.mp3"
+dest_files=["res://.godot/imported/Metal pipe falling sound effect but it’s more violent.mp3-9a06ad438570ee46f85f0e64dffe79ac.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

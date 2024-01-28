@@ -5,16 +5,22 @@ extends Button
 func _ready():
 	disabled = true
 	modulate.a = 0
-	
+	$"../bkg".modulate.a = 0
 	await get_tree().create_timer(35.0).timeout # test
-	disabled = false
-	modulate.a = 255
+	
 	
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
+	if $"../../value_handler".get_game_state() == true:
+		disabled = false
+		modulate.a = 255
+		$"../bkg".modulate.a = 255
+	
+	
 	pass
 
 
