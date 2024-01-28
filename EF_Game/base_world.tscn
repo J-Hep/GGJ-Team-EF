@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://jneng3lm5xdc"]
+[gd_scene load_steps=21 format=3 uid="uid://jneng3lm5xdc"]
 
 [ext_resource type="PackedScene" uid="uid://bfqk0tq2n8axs" path="res://Camera_Scene_3D.tscn" id="1_8xmk0"]
 [ext_resource type="PackedScene" uid="uid://bgxaiwdnhjsoh" path="res://dumpster.tscn" id="2_dcjd8"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bfwnkecc56sn8" path="res://Assets/3D/floor2.tscn" id="5_rgf2j"]
 [ext_resource type="PackedScene" uid="uid://d3l052frrgywr" path="res://Assets/3D/floor3.tscn" id="6_kmr5e"]
 [ext_resource type="Texture2D" uid="uid://dv5jnxjkyxs51" path="res://Assets/2D/city.jpg" id="7_4bftj"]
+[ext_resource type="PackedScene" uid="uid://cah2pve33awct" path="res://hud.tscn" id="7_73jkr"]
 [ext_resource type="PackedScene" uid="uid://cqmr0piqfca0o" path="res://Shaders/Trash_Particles.tscn" id="9_gy7f3"]
 [ext_resource type="PackedScene" uid="uid://bgat3v2gsoaae" path="res://Scenes/value_handler.tscn" id="10_bw8c6"]
 [ext_resource type="PackedScene" uid="uid://b7osos58qr1ud" path="res://audio_handler.tscn" id="11_3al3w"]
@@ -36,6 +37,11 @@ fog_sky_affect = 0.33
 [sub_resource type="BoxShape3D" id="BoxShape3D_sfawq"]
 size = Vector3(1, 5, 5)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_10qtj"]
+size = Vector3(5.88971, 1, 5.29047)
+
+[sub_resource type="BoxMesh" id="BoxMesh_i7pyk"]
+
 [node name="BaseWorld" type="Node3D"]
 
 [node name="Camera3D" parent="." instance=ExtResource("1_8xmk0")]
@@ -55,6 +61,8 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.0921614, 0.146749
 
 [node name="GPUParticles3D" parent="Dumpster" instance=ExtResource("9_gy7f3")]
 transform = Transform3D(-1.74846e-07, -4, 0, 4, -1.74846e-07, 0, 0, 0, 4, -0.393877, 1.80333, 0.694059)
+
+[node name="HUD" parent="." instance=ExtResource("7_73jkr")]
 
 [node name="Control" parent="." instance=ExtResource("2_nohhp")]
 
@@ -95,3 +103,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LeftWall2"]
 shape = SubResource("BoxShape3D_sfawq")
+
+[node name="DeathFailSafe" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.868955, 2.54235)
+metadata/Fail = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeathFailSafe"]
+shape = SubResource("BoxShape3D_10qtj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DeathFailSafe"]
+mesh = SubResource("BoxMesh_i7pyk")

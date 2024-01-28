@@ -27,23 +27,28 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-
+	print("position: ",position.z)
+	if(position.z >= 0 and $"../value_handler".get_game_state() == false):
+		$"../value_handler".set_game_state(true)
+		print("Game ended by position: ",$"../value_handler".get_game_state())
 
 func _on_hit_detect_body_entered(body):
 	#Check if collides with a body
+	
 	if body.has_meta("Obstacle"):
 		#If it collides, and the body has the Metadata bool "Obstacle" set to true
 		#To add the metadata to an object, go to the bottom of the obstacle in the inspector window, click Add Metadata, and create a bool named Obstacle and set it to true
 		print("collided, end the game")
 		#PUT END GAME CODE HERE AND REMOVE PASS
-		print($"../value_handler".get_coins())
-		print($"../value_handler".get_distance())
-		print($"../value_handler".get_time())
+		print("Total Coins: ",$"../value_handler".get_coins())
+		print("Distance: ",$"../value_handler".get_distance())
+		print("Time: ",$"../value_handler".get_time())
 		
 		$"../value_handler".set_game_state(true)
-		print("Game ended: ",$"../value_handler".get_game_state())
+		print("Game ended by collision: ",$"../value_handler".get_game_state())
 	
 	if body.has_meta("Collect"):
 		print("+1 Collectable")
 		$"../value_handler".add_coins(1)
+		body.queue_free()
 	
