@@ -57,7 +57,7 @@ camera_attributes = SubResource("CameraAttributesPractical_da6r1")
 [node name="value_handler" parent="." instance=ExtResource("10_bw8c6")]
 
 [node name="Dumpster" parent="." instance=ExtResource("2_dcjd8")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.0921614, 0.146749, -1.33029)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.0921614, 0.209165, -1.33029)
 
 [node name="GPUParticles3D" parent="Dumpster" instance=ExtResource("9_gy7f3")]
 transform = Transform3D(-1.74846e-07, -4, 0, 4, -1.74846e-07, 0, 0, 0, 4, -0.393877, 1.80333, 0.694059)

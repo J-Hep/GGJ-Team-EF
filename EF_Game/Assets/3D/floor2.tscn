@@ -16,7 +16,7 @@ albedo_texture = ExtResource("2_vfku4")
 [sub_resource type="BoxMesh" id="BoxMesh_a61ib"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mwdfj"]
-size = Vector3(1, 1, 2.20007)
+size = Vector3(1.45166, 0.990845, 2.56671)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iim5b"]
 size = Vector3(10, 0.5, 15)
@@ -55,20 +55,20 @@ visibility_range_fade_mode = 1
 mesh = SubResource("BoxMesh_a61ib")
 
 [node name="Car1" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.229, -2.734)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22583, 0.725752, -2.55068)
 shape = SubResource("BoxShape3D_mwdfj")
 metadata/Obstacle = true
 
 [node name="GWag" parent="Car1" instance=ExtResource("2_3rwn4")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.456521, -0.362536)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.0179372, -0.362536)
 
 [node name="Car2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.229, -11.7595)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.803737, -11.7595)
 shape = SubResource("BoxShape3D_mwdfj")
 metadata/Obstacle = true
 
 [node name="GWag" parent="Car2" instance=ExtResource("2_3rwn4")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.456521, -0.362536)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.0179372, -0.362536)
 
 [node name="Collect" parent="." instance=ExtResource("1_tmmnx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.570088, -7.60886)
@@ -96,7 +96,6 @@ transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, -0.0627671, 
 shape = SubResource("BoxShape3D_iim5b")
 
 [node name="Sidewalk" type="MeshInstance3D" parent="CollisionShape3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 visibility_range_end = 40.0
 visibility_range_end_margin = 3.0
 visibility_range_fade_mode = 1

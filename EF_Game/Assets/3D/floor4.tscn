@@ -17,10 +17,10 @@ albedo_texture = ExtResource("2_unwjh")
 [sub_resource type="BoxMesh" id="BoxMesh_qaavx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wbw3l"]
-size = Vector3(2.46924, 1, 1)
+size = Vector3(2.46924, 1, 1.57434)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e15dh"]
-size = Vector3(1.5, 1, 3.675)
+size = Vector3(1.5, 1, 4.0725)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e0myo"]
 size = Vector3(10, 0.5, 15)
@@ -58,7 +58,7 @@ visibility_range_end_margin = 3.0
 mesh = SubResource("BoxMesh_qaavx")
 
 [node name="Car1" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0100745, 0.731, -2.39766)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0100745, 0.731, -2.11049)
 shape = SubResource("BoxShape3D_wbw3l")
 metadata/Obstacle = true
 
@@ -66,7 +66,7 @@ metadata/Obstacle = true
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -0.466248, 0, 0)
 
 [node name="Car2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.731, -10.9696)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.731, -10.7709)
 shape = SubResource("BoxShape3D_e15dh")
 metadata/Obstacle = true
 
@@ -93,7 +93,6 @@ transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, -0.0627671, 
 shape = SubResource("BoxShape3D_e0myo")
 
 [node name="Sidewalk" type="MeshInstance3D" parent="CollisionShape3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 visibility_range_end = 40.0
 visibility_range_end_margin = 3.0
 visibility_range_fade_mode = 1

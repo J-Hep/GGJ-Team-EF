@@ -16,6 +16,7 @@ albedo_texture = ExtResource("2_ii65v")
 [sub_resource type="BoxMesh" id="BoxMesh_a61ib"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ndnsr"]
+size = Vector3(1.22754, 1, 1.21686)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_exqk3"]
 size = Vector3(10, 0.5, 15)
@@ -83,7 +84,7 @@ metadata/Obstacle = true
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="Trash2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.731, -5.29667)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0363472, 0.731, -5.18824)
 shape = SubResource("BoxShape3D_ndnsr")
 metadata/Obstacle = true
 
@@ -111,7 +112,6 @@ transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, -0.0627671, 
 shape = SubResource("BoxShape3D_exqk3")
 
 [node name="Sidewalk" type="MeshInstance3D" parent="CollisionShape3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 visibility_range_end = 40.0
 visibility_range_end_margin = 3.0
 visibility_range_fade_mode = 1

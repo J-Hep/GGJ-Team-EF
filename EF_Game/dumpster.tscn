@@ -16,9 +16,10 @@ material = SubResource("StandardMaterial3D_cht22")
 size = Vector3(2, 1, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qy151"]
-size = Vector3(1.5, 0.5, 0.25)
+size = Vector3(1.5, 0.685059, 0.330551)
 
 [node name="Dumpster" type="CharacterBody3D"]
+axis_lock_linear_y = true
 axis_lock_linear_z = true
 script = ExtResource("1_7bdmg")
 
@@ -35,6 +36,7 @@ mesh = SubResource("BoxMesh_ld0jd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -1.1)
 
 [node name="HitArea" type="CollisionShape3D" parent="HitDetect"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.658447, -0.333458)
 shape = SubResource("BoxShape3D_qy151")
 
 [node name="Raccoon" parent="." instance=ExtResource("2_m5jjg")]
