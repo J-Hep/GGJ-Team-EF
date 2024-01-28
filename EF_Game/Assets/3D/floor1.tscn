@@ -1,25 +1,91 @@
-[gd_scene load_steps=3 format=3 uid="uid://boaq5hfhliua3"]
+[gd_scene load_steps=12 format=3 uid="uid://boaq5hfhliua3"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_fyqiu"]
-size = Vector3(4, 0.5, 15)
+[ext_resource type="PackedScene" uid="uid://d04dnxtwufgh7" path="res://Assets/3D/Window1x2.gltf" id="1_5cmpm"]
+[ext_resource type="Script" path="res://objectmover.gd" id="1_no8ny"]
+[ext_resource type="Texture2D" uid="uid://b4weujdij4xai" path="res://Assets/2D/Road.png" id="3_mum0c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_37oqp"]
 size = Vector3(4, 0.5, 15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a3t8j"]
+albedo_texture = ExtResource("3_mum0c")
+
+[sub_resource type="BoxMesh" id="BoxMesh_fyqiu"]
+material = SubResource("StandardMaterial3D_a3t8j")
+size = Vector3(4, 0.5, 15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k1va6"]
+size = Vector3(10, 0.5, 15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s683e"]
+albedo_color = Color(0.439216, 0.439216, 0.439216, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fkee4"]
+material = SubResource("StandardMaterial3D_s683e")
+size = Vector3(6, 0.5, 15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y1sf8"]
+albedo_color = Color(0.101961, 0.368627, 0.0352941, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d1xfo"]
+material = SubResource("StandardMaterial3D_y1sf8")
+size = Vector3(10, 0.5, 15)
 
 [node name="floor1" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0)
 
 [node name="Node" type="Node" parent="."]
+script = ExtResource("1_no8ny")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, -7.5)
+[node name="Window1x2" parent="." instance=ExtResource("1_5cmpm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0, -5)
+
+[node name="Window1x3" parent="." instance=ExtResource("1_5cmpm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.999999, 0, -0.999999, 0, -4.37114e-08, -4, 0, -10)
+
+[node name="Window1x4" parent="." instance=ExtResource("1_5cmpm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 5.96046e-08, 0.999999, 0, -0.999999, 5.96046e-08, -4.37114e-08, -4, 0.106, -15)
+
+[node name="Window1x5" parent="." instance=ExtResource("1_5cmpm")]
+transform = Transform3D(-4.37114e-08, 0, -1, -1.49012e-08, 0.999999, 0, 0.999999, 1.49012e-08, -4.37114e-08, 4, 0, 1)
+
+[node name="Window1x6" parent="." instance=ExtResource("1_5cmpm")]
+transform = Transform3D(-4.37114e-08, 0, -1, -5.96046e-08, 0.999999, 0, 0.999999, 5.96046e-08, -4.37114e-08, 4, 0.0505295, -3.77077)
+
+[node name="Window1x7" parent="." instance=ExtResource("1_5cmpm")]
+transform = Transform3D(-4.37113e-08, 5.21081e-15, -1, 5.96046e-08, 0.999999, 2.60541e-15, 0.999999, -5.96046e-08, -4.37114e-08, 4, 0.106, -9)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999999, -1.49012e-08, 0, 1.49012e-08, 0.999999, 0, 0, -7.5)
+shape = SubResource("BoxShape3D_37oqp")
+metadata/Obstacle = false
+
+[node name="Road" type="MeshInstance3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, -1.43051e-06)
 visibility_range_end = 40.0
 visibility_range_end_margin = 3.0
 visibility_range_fade_mode = 1
 mesh = SubResource("BoxMesh_fyqiu")
-skeleton = NodePath("../CollisionShape3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, -7.5)
-shape = SubResource("BoxShape3D_37oqp")
-metadata/Obstacle = false
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, -0.0627671, -7.51682)
+shape = SubResource("BoxShape3D_k1va6")
+
+[node name="Sidewalk" type="MeshInstance3D" parent="CollisionShape3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+visibility_range_end = 40.0
+visibility_range_end_margin = 3.0
+visibility_range_fade_mode = 1
+mesh = SubResource("BoxMesh_fkee4")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, -0.0627671, -7.51682)
+shape = SubResource("BoxShape3D_k1va6")
+
+[node name="Grass" type="MeshInstance3D" parent="CollisionShape3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.031722, -0.00849009)
+visibility_range_end = 40.0
+visibility_range_end_margin = 3.0
+visibility_range_fade_mode = 1
+mesh = SubResource("BoxMesh_d1xfo")
+skeleton = NodePath("../../CollisionShape3D")

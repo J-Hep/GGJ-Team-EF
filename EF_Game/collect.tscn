@@ -1,19 +1,38 @@
 [gd_scene load_steps=4 format=3 uid="uid://wgwxc52h0u75"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_lvdbf"]
+[ext_resource type="PackedScene" uid="uid://nify37vc18q8" path="res://Assets/3D/chickenwing.gltf" id="1_tht34"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_arakg"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_au2rs"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j2nut"]
-albedo_color = Color(1, 1, 0.396078, 1)
+[sub_resource type="SphereMesh" id="SphereMesh_h68or"]
+radius = 0.01
+height = 0.025
 
 [node name="Collect" type="StaticBody3D"]
 metadata/Collect = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_lvdbf")
+shape = SubResource("SphereShape3D_au2rs")
 metadata/Collect = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("SphereMesh_arakg")
-surface_material_override/0 = SubResource("StandardMaterial3D_j2nut")
+[node name="chickenwing" parent="." instance=ExtResource("1_tht34")]
+transform = Transform3D(1.44889, 0.388229, 0, -0.375, 1.39952, 0.388229, 0.100481, -0.375, 1.44889, -0.2, -0.552588, -0.2)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.67654, 0)
+light_color = Color(0.980392, 0.976471, 0.976471, 1)
+light_energy = 1.718
+light_size = 0.02
+omni_attenuation = 1.46409
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.312669, -0.38514)
+amount = 20
+lifetime = 0.5
+mesh = SubResource("SphereMesh_h68or")
+emission_shape = 1
+emission_sphere_radius = 0.1
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0

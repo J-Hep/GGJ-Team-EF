@@ -1,21 +1,43 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3l052frrgywr"]
+[gd_scene load_steps=15 format=3 uid="uid://d3l052frrgywr"]
 
 [ext_resource type="Script" path="res://objectmover.gd" id="1_10kmw"]
+[ext_resource type="PackedScene" uid="uid://d452kkehenyp" path="res://Assets/3D/Stopsign.gltf" id="2_5txem"]
+[ext_resource type="Texture2D" uid="uid://b4weujdij4xai" path="res://Assets/2D/Road.png" id="2_gojcy"]
+[ext_resource type="PackedScene" uid="uid://d04dnxtwufgh7" path="res://Assets/3D/Window1x2.gltf" id="3_sdlf8"]
+[ext_resource type="PackedScene" uid="uid://dyingrpcm4t0m" path="res://Assets/3D/newbalcony.gltf" id="4_pog7w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yalib"]
 size = Vector3(3.9753, 0.439423, 15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yd753"]
+albedo_texture = ExtResource("2_gojcy")
 
 [sub_resource type="BoxMesh" id="BoxMesh_qaavx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lja75"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_v45ur"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_6mw8x"]
+size = Vector3(10, 0.5, 15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m8sqp"]
+albedo_color = Color(0.439216, 0.439216, 0.439216, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_amld3"]
+material = SubResource("StandardMaterial3D_m8sqp")
+size = Vector3(6, 0.5, 15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_np87p"]
+albedo_color = Color(0.101961, 0.368627, 0.0352941, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yxbu8"]
+material = SubResource("StandardMaterial3D_np87p")
+size = Vector3(10, 0.5, 15)
 
 [node name="floor3" type="StaticBody3D"]
 
 [node name="Node" type="Node" parent="." node_paths=PackedStringArray("obstacles")]
 script = ExtResource("1_10kmw")
-obstacles = [NodePath("../CollisionShape3D"), NodePath("../CollisionShape3D3"), NodePath("../CollisionShape3D4")]
+obstacles = [NodePath("../StopSign1"), NodePath("../StopSign2"), NodePath("../StopSign3")]
 
 [node name="floor" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003, 0, -7.50715)
@@ -24,36 +46,66 @@ metadata/Obstacle = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
 transform = Transform3D(3.862, 0, 0, 0, 0.427, 0, 0, 0, 15, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_yd753")
 visibility_range_end = 40.0
 visibility_range_end_margin = 3.0
 mesh = SubResource("BoxMesh_qaavx")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15512, 0.731016, -5.35398)
+[node name="StopSign1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.731, -1.95121)
 shape = SubResource("BoxShape3D_lja75")
 metadata/Obstacle = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+[node name="Stopsign" parent="StopSign1" instance=ExtResource("2_5txem")]
+transform = Transform3D(-3.27835e-09, 0, -0.075, 0, 0.075, 0, 0.075, 0, -3.27835e-09, 0.406388, 0, 0.437)
+
+[node name="StopSign2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.731, -6.73842)
+shape = SubResource("BoxShape3D_lja75")
+metadata/Obstacle = true
+
+[node name="Stopsign" parent="StopSign2" instance=ExtResource("2_5txem")]
+transform = Transform3D(-3.27835e-09, 0, -0.075, 0, 0.075, 0, 0.075, 0, -3.27835e-09, 0.406388, 0, 0.437)
+
+[node name="StopSign3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.694629, -11.935)
+shape = SubResource("BoxShape3D_lja75")
+metadata/Obstacle = true
+
+[node name="Stopsign" parent="StopSign3" instance=ExtResource("2_5txem")]
+transform = Transform3D(-3.27835e-09, 0, -0.075, 0, 0.075, 0, 0.075, 0, -3.27835e-09, 0.406388, 0, 0.437)
+
+[node name="Window1x2" parent="." instance=ExtResource("3_sdlf8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0, -6.8916)
+
+[node name="newbalcony" parent="." instance=ExtResource("4_pog7w")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0, -9.86505)
+
+[node name="Window1x3" parent="." instance=ExtResource("3_sdlf8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.04138, 0, -8.60206)
+
+[node name="newbalcony2" parent="." instance=ExtResource("4_pog7w")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.04138, 0, -4.50664)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, -0.0627671, -7.51682)
+shape = SubResource("BoxShape3D_6mw8x")
+
+[node name="Sidewalk" type="MeshInstance3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 visibility_range_end = 40.0
 visibility_range_end_margin = 3.0
-mesh = SubResource("BoxMesh_v45ur")
+visibility_range_fade_mode = 1
+mesh = SubResource("BoxMesh_amld3")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04583, 0.731016, -10.2214)
-shape = SubResource("BoxShape3D_lja75")
-metadata/Obstacle = true
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, -0.0627671, -7.51682)
+shape = SubResource("BoxShape3D_6mw8x")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D3"]
+[node name="Grass" type="MeshInstance3D" parent="CollisionShape3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.031722, -0.00849009)
 visibility_range_end = 40.0
 visibility_range_end_margin = 3.0
-mesh = SubResource("BoxMesh_v45ur")
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05861, 0.731016, -7.78272)
-shape = SubResource("BoxShape3D_lja75")
-metadata/Obstacle = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D4"]
-visibility_range_end = 40.0
-visibility_range_end_margin = 3.0
-mesh = SubResource("BoxMesh_v45ur")
+visibility_range_fade_mode = 1
+mesh = SubResource("BoxMesh_yxbu8")
+skeleton = NodePath("../../CollisionShape3D")

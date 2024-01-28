@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://488xhx2bkywb"]
 
 [ext_resource type="PackedScene" uid="uid://nfsbinyc3k27" path="res://Assets/3D/Raccoon.gltf" id="1_lj8ep"]
-[ext_resource type="Texture2D" uid="uid://qqcgnpu1tdbi" path="res://Assets/3D/Raccoon_Untitled_Artwork.png" id="2_22461"]
+[ext_resource type="Texture2D" uid="uid://qqcgnpu1tdbi" path="res://Assets/3D/RaccoonTex.png" id="2_22461"]
 [ext_resource type="Material" uid="uid://hi3nmfxt1wyq" path="res://Shaders/outline.tres" id="2_e2ft7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_toonw"]
