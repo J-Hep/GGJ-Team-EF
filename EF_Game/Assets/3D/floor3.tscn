@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d3l052frrgywr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yalib"]
-size = Vector3(3.9753, 0.439423, 15.9857)
+size = Vector3(3.9753, 0.439423, 15)
 
 [sub_resource type="BoxMesh" id="BoxMesh_qaavx"]
 
@@ -11,13 +11,15 @@ size = Vector3(3.9753, 0.439423, 15.9857)
 
 [node name="floor3" type="StaticBody3D"]
 
+[node name="Node" type="Node" parent="."]
+
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003, 0, -8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003, 0, -7.50715)
 shape = SubResource("BoxShape3D_yalib")
 metadata/Obstacle = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D2"]
-transform = Transform3D(3.8624, 0, 0, 0, 0.42736, 0, 0, 0, 15.9465, 0, 0, 0)
+transform = Transform3D(3.862, 0, 0, 0, 0.427, 0, 0, 0, 15, 0, 0, 0)
 visibility_range_end = 40.0
 visibility_range_end_margin = 3.0
 mesh = SubResource("BoxMesh_qaavx")

@@ -36,7 +36,7 @@ fog_sky_affect = 0.33
 [node name="BaseWorld" type="Node3D"]
 
 [node name="Camera3D" parent="." instance=ExtResource("1_8xmk0")]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 1.5, 0.105)
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 1.5, -0.285101)
 current = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -56,17 +56,17 @@ transform = Transform3D(-1.74846e-07, -4, 0, 4, -1.74846e-07, 0, 0, 0, 4, -0.393
 [node name="Control" parent="." instance=ExtResource("2_nohhp")]
 
 [node name="floor1" parent="." instance=ExtResource("3_i81fr")]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, -2, -7.5)
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0.00697149, 0.026018)
 script = ExtResource("4_k0tg3")
 metadata/Obstacle = false
 
 [node name="floor2" parent="." instance=ExtResource("5_rgf2j")]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, -4.13339, -15.426)
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, -3.86274, -14.4159)
 script = ExtResource("4_k0tg3")
 metadata/Obstacle = false
 
 [node name="floor3" parent="." instance=ExtResource("6_kmr5e")]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, -8.2727, -30.8741)
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, -7.74756, -28.9143)
 script = ExtResource("4_k0tg3")
 metadata/Obstacle = false
 

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://wgwxc52h0u75" path="res://collect.tscn" id="1_tmmnx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_brvwy"]
-size = Vector3(3.9753, 0.439423, 15.9857)
+size = Vector3(3.9753, 0.439423, 15)
 
 [sub_resource type="BoxMesh" id="BoxMesh_a61ib"]
 
@@ -13,13 +13,15 @@ size = Vector3(3.9753, 0.439423, 15.9857)
 
 [node name="floor2" type="StaticBody3D"]
 
+[node name="Node" type="Node" parent="."]
+
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00338495, -0.00395203, -8.00953)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00338495, -0.00395203, -7.51668)
 shape = SubResource("BoxShape3D_brvwy")
 metadata/Obstacle = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D2"]
-transform = Transform3D(3.8624, 0, 0, 0, 0.42736, 0, 0, 0, 15.9465, 0, 0, 0)
+transform = Transform3D(3.862, 0, 0, 0, 0.427, 0, 0, 0, 15, 0, 0, 0)
 visibility_range_end = 40.0
 visibility_range_end_margin = 3.0
 visibility_range_fade_mode = 1

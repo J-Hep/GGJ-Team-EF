@@ -10,8 +10,8 @@ var obstacles = [obj1]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Create loop for amount of spawn segments per floor tile (currently 2)
-	
 	"""
+	var parent = get_parent()
 	
 	for i in range(2):
 		var spawnPos = Vector3(randf_range(-2,2), -1, randf_range(0, -7.5) * (i + 1))
@@ -21,13 +21,12 @@ func _ready():
 		print(rand)
 		
 		var spawnedObj = obstacles[rand].instantiate()
-		add_child(spawnedObj)
 		spawnedObj.position = spawnPos
+		parent.add_child(spawnedObj)
 		print(spawnedObj.position)
-		
 	"""
-
-
+		
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
