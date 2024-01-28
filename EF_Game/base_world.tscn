@@ -75,8 +75,8 @@ metadata/Obstacle = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.995637, 0, -0.093309, 0.0717201, 0.639694, 0.765276, 0.0596892, -0.76863, 0.636903, 0, 4.2008, 0)
-light_color = Color(0.87451, 0.827451, 0.94902, 1)
-light_energy = 1.5
+light_color = Color(0.745098, 0.686275, 0.658824, 1)
+light_energy = 2.0
 shadow_enabled = true
 shadow_reverse_cull_face = true
 

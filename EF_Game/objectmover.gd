@@ -8,7 +8,7 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	for i in range(obstacles.size()-1):
+	for i in range(obstacles.size()):
 		obstacles[i].position.x = randf_range(-2,2)
 	
 	
