@@ -33,7 +33,7 @@ func _physics_process(delta):
 
 func _on_hit_detect_body_entered(body):
 	#Check if collides with a body
-	if body.get_meta("Obstacle") == true:
+	if body.has_meta("Obstacle"):
 		#If it collides, and the body has the Metadata bool "Obstacle" set to true
 		#To add the metadata to an object, go to the bottom of the obstacle in the inspector window, click Add Metadata, and create a bool named Obstacle and set it to true
 		print("collided, end the game")

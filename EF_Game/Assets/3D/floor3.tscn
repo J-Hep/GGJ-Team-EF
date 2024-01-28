@@ -9,7 +9,7 @@ size = Vector3(3.9753, 0.439423, 15.9857)
 
 [sub_resource type="BoxMesh" id="BoxMesh_v45ur"]
 
-[node name="StaticBody3D" type="StaticBody3D"]
+[node name="floor3" type="StaticBody3D"]
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003, 0, -8)
@@ -21,7 +21,6 @@ transform = Transform3D(3.8624, 0, 0, 0, 0.42736, 0, 0, 0, 15.9465, 0, 0, 0)
 visibility_range_end = 40.0
 visibility_range_end_margin = 3.0
 mesh = SubResource("BoxMesh_qaavx")
-skeleton = NodePath("../../CollisionShape3D2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15512, 0.731016, -5.35398)

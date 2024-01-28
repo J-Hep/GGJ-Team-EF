@@ -33,17 +33,17 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.0921614, 0, -1.33
 
 [node name="Control" parent="." instance=ExtResource("2_nohhp")]
 
-[node name="StaticBody3D" parent="." instance=ExtResource("3_i81fr")]
+[node name="floor1" parent="." instance=ExtResource("3_i81fr")]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0)
 script = ExtResource("4_k0tg3")
 metadata/Obstacle = false
 
-[node name="StaticBody3D2" parent="." instance=ExtResource("5_rgf2j")]
+[node name="floor2" parent="." instance=ExtResource("5_rgf2j")]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, -4.13339, -15.426)
 script = ExtResource("4_k0tg3")
 metadata/Obstacle = false
 
-[node name="StaticBody3D3" parent="." instance=ExtResource("6_kmr5e")]
+[node name="floor3" parent="." instance=ExtResource("6_kmr5e")]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, -8.2727, -30.8741)
 script = ExtResource("4_k0tg3")
 metadata/Obstacle = false

@@ -8,7 +8,9 @@ albedo_color = Color(0.454902, 0.454902, 0.454902, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_pqqs4"]
 material = SubResource("StandardMaterial3D_p5l4n")
 
-[node name="Raccoon" type="RigidBody3D"]
+[node name="Raccoon" type="StaticBody3D"]
+collision_layer = 0
+collision_mask = 0
 
 [node name="PlayerCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

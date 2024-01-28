@@ -9,7 +9,7 @@ size = Vector3(3.9753, 0.439423, 15.9857)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_3hppd"]
 
-[node name="StaticBody3D" type="StaticBody3D"]
+[node name="floor2" type="StaticBody3D"]
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00338495, -0.00395203, -8.00953)
