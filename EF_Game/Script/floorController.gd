@@ -6,7 +6,7 @@ var axis = Vector3(0, 1, 1)
 var direction = Vector3(0, 0, 1).rotated(axis, deg_to_rad(angle))
 var chunkSize = 15 #set this to be the size of our floor, it can be bigger once we have art assets
 
-var prefabTypes = [preload("res://Assets/3D/floor1.tscn"), preload("res://Assets/3D/floor2.tscn"), preload("res://Assets/3D/floor3.tscn"), preload("res://Assets/3D/bingarbage.gltf"), preload("res://Assets/3D/floor4.tscn"), preload("res://Assets/3D/floor5.tscn"), preload("res://Assets/3D/floor6.tscn")]
+var prefabTypes = [preload("res://Assets/3D/floor1.tscn"), preload("res://Assets/3D/floor2.tscn"), preload("res://Assets/3D/floor3.tscn"), preload("res://Assets/3D/floor4.tscn"), preload("res://Assets/3D/floor5.tscn"), preload("res://Assets/3D/floor6.tscn")]
 var spawnPosition = Vector3(0, -8.072, -30.125) #math wasn't mathing so i threw numbers in
 #var spawnPosition = Vector3(0, (-2*chunkSize) * sin(deg_to_rad(angle)), (-2*chunkSize) * cos(deg_to_rad(angle)))
 var xAxis = Vector3(1, 0, 0)
