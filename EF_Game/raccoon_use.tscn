@@ -22,5 +22,4 @@ albedo_texture = ExtResource("2_22461")
 surface_material_override/0 = SubResource("StandardMaterial3D_toonw")
 
 [node name="Sphere_004" parent="Armature/Skeleton3D" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_j6xdy")
