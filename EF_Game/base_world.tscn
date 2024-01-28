@@ -56,7 +56,7 @@ transform = Transform3D(-1.74846e-07, -4, 0, 4, -1.74846e-07, 0, 0, 0, 4, -0.393
 [node name="Control" parent="." instance=ExtResource("2_nohhp")]
 
 [node name="floor1" parent="." instance=ExtResource("3_i81fr")]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, -2, -7.5)
 script = ExtResource("4_k0tg3")
 metadata/Obstacle = false
 

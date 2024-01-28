@@ -16,13 +16,13 @@ material = SubResource("StandardMaterial3D_cht22")
 size = Vector3(2, 1, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qy151"]
-size = Vector3(2, 0.5, 0.25)
+size = Vector3(1.5, 0.5, 0.25)
 
 [node name="Dumpster" type="CharacterBody3D"]
 script = ExtResource("1_7bdmg")
 
 [node name="DumpsterCollider" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349683, 1.16168, 0.0822754)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.162, 0.082)
 shape = SubResource("BoxShape3D_od3bw")
 
 [node name="DumpsterMesh" type="MeshInstance3D" parent="."]
@@ -37,13 +37,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -1.1)
 shape = SubResource("BoxShape3D_qy151")
 
 [node name="Raccoon" parent="." instance=ExtResource("2_m5jjg")]
-transform = Transform3D(1.19249e-08, 0, -1, 0.258819, 0.965926, 3.08639e-09, 0.965926, -0.258819, 1.15185e-08, -0.280356, 1.29354, -0.0224364)
+transform = Transform3D(1.19249e-08, 0, -1, 0.258819, 0.965926, 3.08639e-09, 0.965926, -0.258819, 1.15185e-08, 0, 1.294, -0.022)
 
 [node name="emptydumpter" parent="." instance=ExtResource("3_8ki3d")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.313839, 0.267227, 0.093575)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.267, 0.094)
 visible = false
 
 [node name="emptydumpter2" parent="." instance=ExtResource("4_gv72a")]
-transform = Transform3D(-9.93477e-08, 0, 1, -0.258819, 0.965926, -2.57131e-08, -0.965926, -0.258819, -9.59625e-08, -0.355519, 1.13488, 0.0892842)
+transform = Transform3D(-9.93477e-08, 0, 1, -0.258819, 0.965926, -2.57131e-08, -0.965926, -0.258819, -9.59625e-08, 0, 1.135, 0.089)
 
 [connection signal="body_entered" from="HitDetect" to="." method="_on_hit_detect_body_entered"]
