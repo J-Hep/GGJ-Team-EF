@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfwnkecc56sn8"]
+[gd_scene load_steps=7 format=3 uid="uid://bfwnkecc56sn8"]
 
+[ext_resource type="Script" path="res://objectmover.gd" id="1_aqb37"]
 [ext_resource type="PackedScene" uid="uid://wgwxc52h0u75" path="res://collect.tscn" id="1_tmmnx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_brvwy"]
@@ -13,7 +14,9 @@ size = Vector3(3.9753, 0.439423, 15)
 
 [node name="floor2" type="StaticBody3D"]
 
-[node name="Node" type="Node" parent="."]
+[node name="Node" type="Node" parent="." node_paths=PackedStringArray("obstacles")]
+script = ExtResource("1_aqb37")
+obstacles = [NodePath("../Pillar1"), NodePath("../Pillar2")]
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00338495, -0.00395203, -7.51668)

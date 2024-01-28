@@ -33,7 +33,7 @@ func _on_destination_reached():
 	newChunk = prefabTypes[randi() % prefabTypes.size()].instantiate()
 	var parent = get_parent_node_3d()
 	var script = load("res://Script/floorController.gd")
-	var objScript = load("res://objectspawner.gd")
+	var objScript = load("res://objectmover.gd")
 	if objScript != null:
 		print("script got")
 	

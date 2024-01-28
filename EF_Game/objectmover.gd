@@ -2,13 +2,16 @@ extends Node
 
 #I stuck this onto a seperate Node in the floor scenes because for some reason we're applying scripts to the floor outside of the prefabs, which overwrites if I put it on the staticBody
 
-const obj1 = preload("res://Scenes/Obstacles/Object1.tscn")
-
 #An array that you can add the preloaded objects to
-var obstacles = [obj1]
+@export var obstacles: Array[CollisionShape3D]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	for i in range(obstacles.size()-1):
+		obstacles[i].position.x = randf_range(-2,2)
+	
+	
 	#Create loop for amount of spawn segments per floor tile (currently 2)
 	"""
 	var parent = get_parent()

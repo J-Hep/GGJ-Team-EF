@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3l052frrgywr"]
+[gd_scene load_steps=6 format=3 uid="uid://d3l052frrgywr"]
+
+[ext_resource type="Script" path="res://objectmover.gd" id="1_10kmw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yalib"]
 size = Vector3(3.9753, 0.439423, 15)
@@ -11,14 +13,16 @@ size = Vector3(3.9753, 0.439423, 15)
 
 [node name="floor3" type="StaticBody3D"]
 
-[node name="Node" type="Node" parent="."]
+[node name="Node" type="Node" parent="." node_paths=PackedStringArray("obstacles")]
+script = ExtResource("1_10kmw")
+obstacles = [NodePath("../CollisionShape3D"), NodePath("../CollisionShape3D3"), NodePath("../CollisionShape3D4")]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+[node name="floor" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003, 0, -7.50715)
 shape = SubResource("BoxShape3D_yalib")
 metadata/Obstacle = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
 transform = Transform3D(3.862, 0, 0, 0, 0.427, 0, 0, 0, 15, 0, 0, 0)
 visibility_range_end = 40.0
 visibility_range_end_margin = 3.0
